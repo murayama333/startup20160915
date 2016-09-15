@@ -8,6 +8,22 @@ http://materializecss.com/
 
 > マテリアルデザイン（Material Design）は、アメリカ合衆国のGoogle社が提唱したユーザーエクスペリエンスデザインの体系、およびそれを実現する開発技術や手法、デザイン、試みなどの包括的呼称。 - Wikipedia
 
+### 素材の準備
+
+以下の2つの画像ファイルをダウンロードしておいてください
+
+> top.jpg、entry.png は st0915フォルダに配置します。
+
+
+#### top.jpg
+![](https://dl.dropboxusercontent.com/u/141509/st0915/top.jpg)
+
+
+#### entry.png
+
+![](https://dl.dropboxusercontent.com/u/141509/st0915/entry.png)
+
+
 ### mate00.html
 
 Materializeを使うための雛形を準備します。
