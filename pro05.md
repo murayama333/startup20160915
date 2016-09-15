@@ -18,24 +18,57 @@ pwd
 
 ### cd カレントフォルダの移動
 
-```
-cd /home/ubuntu
-```
-
-### mkdir フォルダの作成
-
+以下のように入力すると /var/logフォルダに移動します。
 
 ```
-mkdir sample
+cd /var/log
 ```
+
+> 移動後、pwdコマンドでカレントフォルダを確認してみましょう。
+
+以下のように入力すると /varフォルダに移動します。
+
+```
+cd /var
+```
+
+以下のように入力すると /var/logフォルダに移動します。
+
+```
+cd /
+```
+
+> Windowsのルートフォルダは C:¥ です。Linuxのルートフォルダは / です。
+
 
 ### ls カレントフォルダの閲覧
+
+カレントフォルダ上のファイルやフォルダを表示します。
 
 ```
 ls
 ```
 
+以下のように -l オプションを指定すると表示が見やすくなります。
+
+```
+ls -l
+```
+
+
+### mkdir フォルダの作成
+
+カレントフォルダにsampleというフォルダを作成します。
+
+```
+mkdir sample
+```
+
+
+
 ### echo メッセージの表示
+
+画面にメッセージを表示します。
 
 ```
 echo Hello World
@@ -47,13 +80,16 @@ echo Hello World
 echo Hello World > hello.txt
 ```
 
+> lsコマンドで hello.txt を見つけてみましょう。
+
+
 ### cat ファイルの表示
 
 ```
-cat sample.txt
+cat hello.txt
 ```
 
-> Linuxにはviエディタというソフトが標準でインストールされています。viエディタはviコマンドで起動できます。（参考） http://net-newbie.com/linux/commands/vi.html
+> Linuxにはnanoエディタというソフトが標準でインストールされています。nanoエディタはnanoコマンドで起動できます。
 
 
 ## 2.2 Webサーバのインストール
@@ -65,16 +101,17 @@ cat sample.txt
 クラウド上に作成してすぐのサーバは最新の状態になっていないので、以下のコマンドを使ってサーバの利用するソフトウェアを最新にしておきます。
 
 ```
-sudo apt-get update -y
+apt-get update -y
 ```
-
 
 ### Webサーバ（Apache）のインストール
 
 サーバ上にApacheをインストールします。Apacheは世界で最も使われているWebサーバープロダクトです。
 
+> Apacheをインストールするとブラウザから http://52.79.97.23/ でアクセスできるようになります。
+
 ```
-sudo apt-get install apache2
+apt-get install apache2
 ```
 
 #### Apacheの起動と停止
@@ -82,13 +119,13 @@ sudo apt-get install apache2
 Apacheは以下のコマンドで起動できます。
 
 ```
-sudo service apache2 start
+service apache2 start
 ```
 
 停止するときは以下のようにコマンドを実行します。
 
 ```
-sudo service apache2 stop
+service apache2 stop
 ```
 
 ### 2.3 HTMLファイルのアップロード
@@ -97,11 +134,13 @@ sudo service apache2 stop
 
 #### Macユーザの場合
 
-Desktop上のsample.htmlをアップロードする場合
+Desktop上のsample.htmlをアップロードする場合は以下のように入力します。
 
 ```
-scp /Users/murayama/Desktop/sample.html ubuntu@52.79.97.23
+scp /Users/murayama/Desktop/sample.html root@52.79.97.23
 ```
+
+> 画像ファイルなども忘れずにアップロードします。
 
 #### Windowsユーザの場合
 
@@ -110,8 +149,10 @@ scp /Users/murayama/Desktop/sample.html ubuntu@52.79.97.23
 
 ### 2.4 Apacheの公開フォルダにHTMLファイルをコピー
 
+Apacheは標準で /var/www/html フォルダ上のファイルをWeb上に公開します。HTMLファイルを/var/www/htmlにコピーしましょう。
+
 ```
-sudo cp /home/ubuntu/sample.html /var/www/html
+cp /root/sample.html /var/www/html
 ```
 
 以上でLinuxサーバのセットアップは完了です。

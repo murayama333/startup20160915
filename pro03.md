@@ -12,8 +12,7 @@ http://materializecss.com/
 
 以下の2つの画像ファイルをダウンロードしておいてください
 
-> top.jpg、entry.png は st0915フォルダに配置します。
-
+> top.jpg、entry.png は st0915/images フォルダに配置します。
 
 #### top.jpg
 ![](https://dl.dropboxusercontent.com/u/141509/st0915/top.jpg)
